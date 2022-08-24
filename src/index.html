@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlpineJs</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AlpineJs</title>
-</head>
+  <body>
+    <div x-data="{ open: false }">
+      <button @click="open = ! open">Expand</button>
 
-<body>
-  <h1 x-data="{ message: 'I ❤️ AlpineJs'}" x-text="message"></h1>
+      <div x-show="open" x-transition>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sit
+          temporibus eius, saepe iure quod!
+        </p>
+      </div>
 
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</body>
+      <div
+        x-data="{ 
+          colors: ['red', 'blue', 'green', 'cyan', 'black', 'pink'],
 
+          color: 'red',
+
+          get label() {
+            return `<strong>
+              Color is <span style='color: ${this.color}'>
+                ${this.color}
+              </span>
+            </strong>`;
+          },
+
+          get getRandomColor() {
+            this.color = this.colors[this.colors.length * Math.random() | 0];
+          }
+        }"
+      >
+        <button x-on:click="getRandomColor">Randomize color</button>
+
+        <p x-html="label"></p>
+      </div>
+    </div>
+
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+  </body>
 </html>
