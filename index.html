@@ -5,13 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AlpineJs</title>
+  <title>AlpineJs - Counter</title>
 </head>
 
 <body>
-  <h1 x-data="{ message: 'I ❤️ AlpineJs'}" x-text="message"></h1>
+  <!-- 
+    When any property in x-data changes, everything that relies on it 
+    will change as well. 
+  -->
+  <div x-data="{ count: 0 }">
+    <button x-on:click="count++">+ Inc</button>
+    <span x-text="count" style="margin: 0 .75rem;"></span>
+    <button x-on:click="count--">- Dec</button>
+    <br>
+    <br>
+    <button x-on:click="count = 0">Reset</button>
+  </div>
 
-  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </body>
 
 </html>
