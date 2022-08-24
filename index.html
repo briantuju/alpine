@@ -9,28 +9,29 @@
   <link rel="stylesheet" href="./app.css">
 </head>
 
-<body>
+<body class="container">
   <!-- 
     When any property in x-data changes, everything that relies on it 
     will change as well. 
   -->
-  <div x-data="{ open: false }" class="w-full flex-center flex-col">
-    <button @click="open = !open">Toggle</button>
+  <div x-data="{ 
+    search: '',
 
-    <div x-show="open" @click.outside="open = false">
-      <section class="dropdown">
-        <h3>This is a dropdown</h3>
+    items: ['Apple', 'Mango', 'Strawberry', 'Orange'],
 
-        <p>
-          Clicking <b>outside</b> this element will make it <b>hidden</b>
-        </p>
-        <p>
-          This shows the power of
-          <code> x-show </code>
-          that AlpineJs brings with it
-        </p>
-      </section>
-    </div>
+    get filterItems() {
+      return this.items.filter(
+        (item) => item.toLowerCase().match(this.search?.toLowerCase())
+      )
+    }
+  }">
+    <input type="search" x-model="search" placeholder="Search fruits ...">
+
+    <ul>
+      <template x-for="item in filterItems" :key="item">
+        <li x-text="item"></li>
+      </template>
+    </ul>
   </div>
 
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
