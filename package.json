@@ -1,0 +1,15 @@
+{
+  "name": "alpine",
+  "version": "0.1.0",
+  "description": "An application to show the usage of AlpineJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alpinejs",
+    "alpine"
+  ],
+  "author": "Brian Tuju <briantuju@gmail.com>",
+  "license": "MIT"
+}
