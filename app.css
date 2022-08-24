@@ -1,0 +1,45 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center-x {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  padding: 2rem;
+  box-shadow: 10px 10px #dedede;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  max-width: 380px;
+  margin: 0.5rem auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
