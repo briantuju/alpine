@@ -14,12 +14,12 @@
     will change as well. 
   -->
   <div x-data="{ count: 0 }">
-    <button x-on:click="count++">+ Inc</button>
+    <button @click="count++">+ Inc</button>
     <span x-text="count" style="margin: 0 .75rem;"></span>
-    <button x-on:click="count--">- Dec</button>
+    <button @click="count--">- Dec</button>
     <br>
     <br>
-    <button x-on:click="count = 0">Reset</button>
+    <button @click="count = 0">Reset</button>
   </div>
 
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
